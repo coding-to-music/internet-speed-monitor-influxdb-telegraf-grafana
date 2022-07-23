@@ -2,7 +2,7 @@ FROM debian:buster-slim
 RUN apt update && apt install -y curl sudo cron
 # install instruction: https://www.speedtest.net/apps/cli
 RUN curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
-RUN apt install speedtest
+RUN apt install speedtest-cli -y
 RUN mkdir /var/log/speedtest
 # change server for speed test by altering value of argument "-s"
 # 3199 - NEXT LAYER GmbH, Vienna, Austria
