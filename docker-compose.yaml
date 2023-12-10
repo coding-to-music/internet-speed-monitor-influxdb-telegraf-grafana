@@ -13,7 +13,11 @@ services:
     networks:
       - speedtest
   speedtester:
-    build: "speedtest/."
+    build:
+      context: speedtest
+      args:
+        - SPEEDTEST_CRON_SCHEDULE=${SPEEDTEST_CRON_SCHEDULE}
+        - SPEEDTEST_SERVER=${SPEEDTEST_SERVER}
     volumes:
       - speedtest-storage:/var/log/speedtest
     depends_on:
@@ -21,7 +25,11 @@ services:
     networks:
       - speedtest
   telegraf:
-    build: "telegraf/."
+    build:
+      context: "telegraf/."
+      args:
+        DOCKERIZE_VERSION: v0.6.1
+        DOCKERIZE_ARCH: amd64
     volumes:
       - speedtest-storage:/var/log/speedtest
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
@@ -37,10 +45,6 @@ services:
       - grafana-storage:/var/lib/grafana
     environment:
       - GF_SERVER_ROOT_URL=${GF_SERVER_ROOT_URL}
-      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
-      - GF_AUTH_ANONYMOUS_ENABLED=true
-      - GF_AUTH_BASIC_ENABLED=false
-      - GF_SERVER_SERVE_FROM_SUB_PATH=true
     networks:
       - speedtest
 

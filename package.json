@@ -1,21 +1,13 @@
 {
   "name": "internet-speed-monitor-influxdb-telegraf-grafana",
   "version": "1.0.0",
-  "description": "with [speedtest.net][1], [Grafana][2], [Telegraf][3], [InfluxDB][4] and [Docker][5].",
+  "description": "# 🚀 Internet speed monitor with speedtest.net, Grafana, Telegraf, InfluxDB and Docker 🚀",
   "main": "index.js",
   "scripts": {
     "deploy": "git add . && git commit -m Build && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/raaaimund/internet-speed-monitor.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/raaaimund/internet-speed-monitor/issues"
-  },
-  "homepage": "https://github.com/raaaimund/internet-speed-monitor#readme"
+  "license": "ISC"
 }

@@ -1,15 +1,15 @@
-version: '3'
-services: 
-    grafana:
-        networks:
-            - web
-        labels:
-            - traefik.http.routers.speedtest.rule=Host(`${SERVER_HOSTNAME}`)
-            - traefik.http.routers.speedtest.tls=true
-            - traefik.http.routers.speedtest.tls.certresolver=le
-            - traefik.http.services.speedtest.loadbalancer.server.port=3000
-            - traefik.docker.network=web
-            - traefik.http.routers.speedtest.entrypoints=websecure
+version: "3"
+services:
+  grafana:
+    networks:
+      - web
+    labels:
+      - traefik.http.routers.speedtest.rule=Host(`${SERVER_HOSTNAME}`)
+      - traefik.http.routers.speedtest.tls=true
+      - traefik.http.routers.speedtest.tls.certresolver=le
+      - traefik.http.services.speedtest.loadbalancer.server.port=3000
+      - traefik.docker.network=web
+      - traefik.http.routers.speedtest.entrypoints=websecure
 
 networks:
-    web:
+  web:
