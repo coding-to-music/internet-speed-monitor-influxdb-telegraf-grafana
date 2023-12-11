@@ -65,3 +65,24 @@ Change the value of the `-s` argument in the [.env](./speedtest/Dockerfile) file
 [5]: https://www.docker.com/
 [6]: https://www.speedtest.net/apps/cli
 [7]: speedtest/Dockerfile
+
+````
+
+
+```java
+docker compose up
+````
+
+```java
+[+] Running 9/2
+ ✔ Network internet-speed-monitor-influxdb-telegraf-grafana_web                 Created                                                                                      0.0s
+ ✔ Network internet-speed-monitor-influxdb-telegraf-grafana_speedtest           Created                                                                                      0.1s
+ ✔ Volume "internet-speed-monitor-influxdb-telegraf-grafana_grafana-storage"    Created                                                                                      0.0s
+ ✔ Volume "internet-speed-monitor-influxdb-telegraf-grafana_influxdb-storage"   Created                                                                                      0.0s
+ ✔ Volume "internet-speed-monitor-influxdb-telegraf-grafana_speedtest-storage"  Created                                                                                      0.0s
+ ✔ Container internet-speed-monitor-influxdb-telegraf-grafana-grafana-1         Created                                                                                      0.0s
+ ✔ Container internet-speed-monitor-influxdb-telegraf-grafana-influxdb-1        Created                                                                                      0.0s
+ ✔ Container internet-speed-monitor-influxdb-telegraf-grafana-telegraf-1        Created                                                                                      0.0s
+ ✔ Container internet-speed-monitor-influxdb-telegraf-grafana-speedtester-1     Created                                                                                      0.0s
+Attaching to internet-speed-monitor-influxdb-telegraf-grafana-grafana-1, internet-speed-monitor-influxdb-telegraf-grafana-influxdb-1, internet-speed-monitor-influxdb-telegraf-grafana-speedtester-1, internet-speed-monitor-influxdb-telegraf-grafana-telegraf-1
+```
